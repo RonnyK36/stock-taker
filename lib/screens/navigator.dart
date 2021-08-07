@@ -1,8 +1,10 @@
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stock_take/screens/home_page.dart';
 import 'package:stock_take/screens/records.dart';
 import 'package:stock_take/screens/stock_page.dart';
+import 'package:stock_take/screens/transaction.dart';
 
 class NavigationPage extends StatefulWidget {
   const NavigationPage({Key? key}) : super(key: key);
@@ -14,6 +16,8 @@ class NavigationPage extends StatefulWidget {
 class _NavigationPageState extends State<NavigationPage> {
   PageController? pageController;
   int pageIndex = 0;
+  final inactiveColor = Color(0xff00cf29);
+  final activeColor = Color(0xff0015cf);
 
   @override
   void initState() {
@@ -22,10 +26,21 @@ class _NavigationPageState extends State<NavigationPage> {
     pageController = PageController();
   }
 
-  onPageChanged(int pageIndex) {
-    setState(() {
-      this.pageIndex = pageIndex;
-    });
+  Widget loadPages() {
+    // setState(() {
+    //   this.pageIndex = pageIndex;
+    // });
+    switch (pageIndex) {
+      case 1:
+        return Transactions();
+      case 2:
+        return StockPage();
+      case 3:
+        return RecordsPage();
+      case 0:
+      default:
+        return HomePage();
+    }
   }
 
   onTap(int pageIndex) {
@@ -39,32 +54,42 @@ class _NavigationPageState extends State<NavigationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        children: [
-          HomePage(),
-          StockPage(),
-          RecordsPage(),
-        ],
-        controller: pageController,
-        onPageChanged: onPageChanged,
-      ),
-      bottomNavigationBar: CupertinoTabBar(
-        onTap: onTap,
-        currentIndex: pageIndex,
-        activeColor: Color(0xff0015cf),
-        inactiveColor: Colors.black,
+      body: loadPages(),
+      bottomNavigationBar: BottomNavyBar(
+        onItemSelected: (index) {
+          setState(() {
+            this.pageIndex = index;
+          });
+        },
+        selectedIndex: pageIndex,
         items: [
-          BottomNavigationBarItem(
-            label: 'RB Wines',
+          BottomNavyBarItem(
+            textAlign: TextAlign.center,
+            activeColor: activeColor,
+            inactiveColor: inactiveColor,
+            title: Text('Home'),
             icon: Icon(Icons.home),
           ),
-          BottomNavigationBarItem(
-            label: 'Available Stock',
-            icon: Icon(Icons.sticky_note_2_outlined),
+          BottomNavyBarItem(
+            textAlign: TextAlign.center,
+            activeColor: activeColor,
+            inactiveColor: inactiveColor,
+            title: Text('Transact'),
+            icon: Icon(Icons.add),
           ),
-          BottomNavigationBarItem(
-            label: 'Shop records',
-            icon: Icon(Icons.file_copy_outlined),
+          BottomNavyBarItem(
+            textAlign: TextAlign.center,
+            activeColor: activeColor,
+            inactiveColor: inactiveColor,
+            title: Text('Stock'),
+            icon: Icon(Icons.event_available),
+          ),
+          BottomNavyBarItem(
+            textAlign: TextAlign.center,
+            activeColor: activeColor,
+            inactiveColor: inactiveColor,
+            title: Text('Records'),
+            icon: Icon(Icons.history),
           ),
         ],
       ),

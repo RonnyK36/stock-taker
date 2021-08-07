@@ -2,8 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:stock_take/config/config.dart';
-import 'package:stock_take/screens/make_sale.dart';
-import 'package:stock_take/screens/purchase_products.dart';
+import 'package:stock_take/screens/transaction.dart';
 import 'package:stock_take/widgets/carousel_card.dart';
 import 'package:stock_take/widgets/service_card.dart';
 import 'package:stock_take/widgets/some_record_card.dart';
@@ -60,7 +59,7 @@ class _HomePageState extends State<HomePage> {
                         onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (c) => MakeSale(),
+                            builder: (c) => Transactions(),
                           ),
                         ),
                       ),
@@ -74,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                         onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (c) => PurchaseProducts(),
+                            builder: (c) => Transactions(),
                           ),
                         ),
                       ),
@@ -97,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                         onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (c) => MakeSale(),
+                            builder: (c) => Transactions(),
                           ),
                         ),
                       ),
@@ -108,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                         onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (c) => PurchaseProducts(),
+                            builder: (c) => Transactions(),
                           ),
                         ),
                       ),
