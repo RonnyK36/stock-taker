@@ -9,3 +9,9 @@ const kBodyTitleTS = TextStyle(
 const kRecordTileTS = TextStyle(
   fontSize: 17,
 );
+
+const kBodyAmountTS = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 24,
+  color: Color(0xff0015cf),
+);

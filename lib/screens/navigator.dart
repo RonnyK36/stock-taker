@@ -56,6 +56,7 @@ class _NavigationPageState extends State<NavigationPage> {
     return Scaffold(
       body: loadPages(),
       bottomNavigationBar: BottomNavyBar(
+        backgroundColor: Colors.white,
         onItemSelected: (index) {
           setState(() {
             this.pageIndex = index;
@@ -67,14 +68,14 @@ class _NavigationPageState extends State<NavigationPage> {
             textAlign: TextAlign.center,
             activeColor: activeColor,
             inactiveColor: inactiveColor,
-            title: Text('Home'),
+            title: Text('RhodaBase'),
             icon: Icon(Icons.home),
           ),
           BottomNavyBarItem(
             textAlign: TextAlign.center,
             activeColor: activeColor,
             inactiveColor: inactiveColor,
-            title: Text('Transact'),
+            title: Text('Buy or Sell'),
             icon: Icon(Icons.add),
           ),
           BottomNavyBarItem(
