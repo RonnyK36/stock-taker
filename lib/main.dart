@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stock_take/screens/home_page.dart';
+import 'package:stock_take/screens/navigator.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,10 +13,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        accentColor: Colors.teal,
+        primaryColor: Color(0xff0015cf),
+        accentColor: Color(0xff00cf29),
       ),
-      home: HomePage(),
+      home: NavigationPage(),
     );
   }
 }
