@@ -20,20 +20,6 @@ class _SaleTabState extends State<SaleTab> {
             width: double.infinity,
             child: TextField(),
           ),
-          Center(
-            child: Container(
-              color: Colors.green,
-              height: 40,
-              width: 200,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Chrome'),
-                  Text('200'),
-                ],
-              ),
-            ),
-          ),
           SizedBox(height: 30),
           Center(
             child: Card(

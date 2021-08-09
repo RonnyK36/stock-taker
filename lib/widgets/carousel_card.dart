@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stock_take/config/config.dart';
 
 GestureDetector carouselItem(
   context, {
@@ -60,11 +61,7 @@ GestureDetector carouselItem(
                 ),
                 Text(
                   '07/08/2021',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontStyle: FontStyle.italic,
-                    color: Colors.grey[700],
-                  ),
+                  style: kDatesTS,
                 ),
               ],
             ),
