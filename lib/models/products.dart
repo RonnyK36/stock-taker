@@ -1,14 +1,14 @@
 class Product {
   String? brand;
-  String? size;
+  String? quantity;
   double? buyingPrice;
   double? sellingPrice;
-  int? quantity;
+  int? stock;
 
   Product({
     this.brand,
-    this.size,
     this.quantity,
+    this.stock,
     this.buyingPrice,
     this.sellingPrice,
   });

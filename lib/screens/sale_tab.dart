@@ -15,11 +15,6 @@ class _SaleTabState extends State<SaleTab> {
     return Container(
       child: ListView(
         children: [
-          Container(
-            height: 50,
-            width: double.infinity,
-            child: TextField(),
-          ),
           SizedBox(height: 30),
           Center(
             child: Card(
