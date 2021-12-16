@@ -5,7 +5,7 @@ import 'package:stock_take/config/config.dart';
 import 'package:stock_take/screens/transaction.dart';
 import 'package:stock_take/widgets/carousel_card.dart';
 import 'package:stock_take/widgets/service_card.dart';
-import 'package:stock_take/widgets/some_record_card.dart';
+import 'package:stock_take/widgets/single_product_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,6 +17,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    Config().init(context);
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
@@ -163,36 +164,9 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            bottomRecord(
-              context,
-              brand: 'Kibao',
-              available: '16',
-              price: '200',
-            ),
-            bottomRecord(
-              context,
-              brand: 'Chrome',
-              available: '46',
-              price: '220',
-            ),
-            bottomRecord(
-              context,
-              brand: 'K.C',
-              available: '21',
-              price: '250',
-            ),
-            bottomRecord(
-              context,
-              brand: 'VAT 69',
-              available: '5',
-              price: '600',
-            ),
-            bottomRecord(
-              context,
-              brand: 'Best',
-              available: '75',
-              price: '140',
-            ),
+            SingleProductCard(),
+            SingleProductCard(),
+            SingleProductCard(),
           ],
         ),
       ),
