@@ -19,7 +19,17 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      // backgroundColor: Color(0xff020629),
+      appBar: AppBar(
+        title: Text(
+          'RhodaBase W&S',
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: ListView(
           children: [
@@ -32,16 +42,7 @@ class _HomePageState extends State<HomePage> {
                     child: Container(
                       height: 40,
                       width: double.infinity,
-                      child: Center(
-                        child: Text(
-                          'RhodaBase wines and Spirits',
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
+                      child: Center(child: Text('17 November,2021')),
                     ),
                   ),
                   SizedBox(
